@@ -1,0 +1,27 @@
+name: CI
+
+on: 
+  push:
+    branches: 
+      - 'main'
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              with:
+                persist-credentials: false
+            - name: Setup Java JDK
+              uses: actions/setup-java@v4
+              with:
+                distribution: zulu
+                java-version: 21
+                cache: gradle
+            - name: Gradle test task
+              run: ./gradlew --no-daemon clean test
