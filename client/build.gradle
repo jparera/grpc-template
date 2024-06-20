@@ -8,6 +8,7 @@ repositories {
 
 def javaLanguageVersion = JavaLanguageVersion.of(21)
 def jUnitJupiterVersion = '5.10.2'
+def grpcVersion = '1.64.0'
 
 application {
     mainClass = 'net.wrlt.grpc.template.client.Main'
@@ -15,6 +16,7 @@ application {
 
 dependencies {
     implementation project(':shared')
+    runtimeOnly "io.grpc:grpc-netty-shaded:${grpcVersion}"
 }
 
 testing {
