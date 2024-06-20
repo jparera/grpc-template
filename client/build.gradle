@@ -1,0 +1,32 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+def javaLanguageVersion = JavaLanguageVersion.of(21)
+def jUnitJupiterVersion = '5.10.2'
+
+application {
+    mainClass = 'net.wrlt.grpc.template.client.Main'
+}
+
+dependencies {
+    implementation project(':shared')
+}
+
+testing {
+    suites {
+        test {
+            useJUnitJupiter(jUnitJupiterVersion)
+        }
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = javaLanguageVersion
+    }
+}

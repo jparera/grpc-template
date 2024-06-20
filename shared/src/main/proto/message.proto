@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package wrlt.grpc.template;
+
+option java_multiple_files = true;
+option java_package = "net.wrlt.grpc.template.shared.proto";
+option java_outer_classname = "MessageProto";
+
+message Message {
+    string content = 1;
+    int32 type = 2;
+}

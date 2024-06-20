@@ -1,0 +1,3 @@
+rootProject.name = 'grpc-template'
+
+include 'shared', 'client', 'server'
