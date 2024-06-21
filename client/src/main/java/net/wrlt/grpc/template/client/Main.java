@@ -11,8 +11,14 @@ import net.wrlt.grpc.template.shared.proto.EchoGrpc;
 import net.wrlt.grpc.template.shared.proto.EchoRequest;
 
 public class Main {
-    public static void main(String[] args) throws IOException, InterruptedException {
-        var channel = Grpc.newChannelBuilder("localhost:50051", InsecureChannelCredentials.create()).build();
+    private static final String HOST = "localhost";
+    private static final int PORT = 50051;
+
+    public static void main(String[] args)
+        throws IOException, InterruptedException
+    {
+        var credentials = InsecureChannelCredentials.create();
+        var channel = Grpc.newChannelBuilderForAddress(HOST, PORT, credentials).build();
         try {
             var stub = EchoGrpc.newBlockingStub(channel);
             try {
