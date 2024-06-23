@@ -5,10 +5,9 @@ import java.io.IOException;
 import io.grpc.Grpc;
 import io.grpc.InsecureServerCredentials;
 import io.grpc.stub.StreamObserver;
-
 import net.wrlt.grpc.template.shared.proto.EchoGrpc;
-import net.wrlt.grpc.template.shared.proto.EchoRequest;
 import net.wrlt.grpc.template.shared.proto.EchoReply;
+import net.wrlt.grpc.template.shared.proto.EchoRequest;
 
 public class Main {
     private static final int PORT = 50051;
