@@ -1,15 +1,15 @@
 plugins {
     id 'java-library'
-    id 'com.google.protobuf' version '0.9.4'
+    id 'com.google.protobuf' version '0.9.5'
 }
 
 repositories {
     mavenCentral()
 }
 
-def javaLanguageVersion = JavaLanguageVersion.of(21)
+def javaLanguageVersion = JavaLanguageVersion.of(25)
 def protobufVersion = '4.27.1'
-def grpcVersion = '1.64.0'
+def grpcVersion = '1.76.0'
 def tomcatVersion = '6.0.53'
 
 dependencies {

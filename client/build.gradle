@@ -6,9 +6,9 @@ repositories {
     mavenCentral()
 }
 
-def javaLanguageVersion = JavaLanguageVersion.of(21)
+def javaLanguageVersion = JavaLanguageVersion.of(25)
 def jUnitJupiterVersion = '5.10.2'
-def grpcVersion = '1.64.0'
+def grpcVersion = '1.76.0'
 
 application {
     mainClass = 'net.wrlt.grpc.template.client.Main'
